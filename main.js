@@ -12,6 +12,18 @@ let subButton = document.querySelectorAll("#submenuButton button")
 let url =  new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=${COUNTRY}&apiKey=${apiKey}`)
 let E = document.getElementById("Error")
 
+
+searchBar.addEventListener("keypress",function(event){
+    if(searchBar.value){
+        if(event.key === 'Enter'){
+            event.preventDefault()
+            document.getElementById("search-input").click()
+            getNewsByKeyWord()
+        }
+    }
+})
+
+
 topButton.forEach((menu)=>
     menu.addEventListener("click",async (event)=>{
         if(event){
@@ -48,10 +60,10 @@ try {
     }
 }
 const getNewsByKeyWord = async() => {
-        const keyword = document.getElementById("search-input").value
-    console.log(keyword)
+    const keyword = document.getElementById("search-input").value
     const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=${COUNTRY}&q=${keyword}&apiKey=${apiKey}`)
     everyTime(url)
+    document.getElementById("search-input").value = ""
 } 
 
 const render = () =>{

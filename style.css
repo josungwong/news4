@@ -124,10 +124,13 @@
         left: 23vw;
     }
     #search-input{
-        width: 140px;
+        width: 145px;
+        border-radius: 10px;
     }
     .gumButton{
         width: 50px;
+        position: absolute;
+        top: -100em;
     }
     .head-line{
         
