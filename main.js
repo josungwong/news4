@@ -61,7 +61,7 @@ try {
 }
 const getNewsByKeyWord = async() => {
     const keyword = document.getElementById("search-input").value
-    const url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=${COUNTRY}&q=${keyword}&apiKey=${apiKey}`)
+    url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=${COUNTRY}&q=${keyword}&apiKey=${apiKey}`)
     everyTime(url)
     document.getElementById("search-input").value = ""
 } 
